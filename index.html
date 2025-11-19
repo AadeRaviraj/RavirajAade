@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raviraj Aade | Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-code"></i>
+                    Raviraj<span>Aade</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <button class="theme-toggle" id="themeToggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+                <button class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resume Download Modal -->
+    <div class="modal" id="resumeModal">
+        <div class="modal-content resume-modal-content">
+            <span class="close-btn" id="closeResumeModal">&times;</span>
+            
+            <div class="resume-preview">
+                <div class="resume-header">
+                    <h2>Raviraj Aade</h2>
+                    <p>Junior Software Developer</p>
+                    <p>Email: ravirajaade299@gmail.com | Phone: +91 9075135648</p>
+                    <p>Location: Katraj, Pune, Maharashtra 411046</p>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Professional Summary</h3>
+                    <p>
+                        Experienced software developer with 1.5+ years specializing 
+                        in robust Windows applications. Proficient in 
+                        Flutter, Dart and Python, Flask , real-time application development,
+                        and integration using TensorFlow and Firebase. 
+                        Expertise in database management with MySQL and Firebase. 
+                        Dedicated problem solver passionate 
+                        about creating intelligent, user-friendly applications.
+                    </p>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Technical Skills</h3>
+                    <div class="resuem-item-resume">
+                        <h4>Languages</h4>
+                        <p>C, C#, Java, Python, Dart, SQL</p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>Mobile</h4>
+                        <p>Android (XML, Java), Dart (Flutter)</p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>Desktop</h4>
+                        <p>C# .net</p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>Cloud</h4>
+                        <p> Firebase </p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>Database</h4>
+                        <p> MySQL, MongoDB </p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>Frameworks</h4>
+                        <p>.NET, Flutter, Flask, TensorFlow</p>
+                    </div>
+                    <div class="resuem-item-resume">
+                        <h4>VCS & API</h4>
+                        <p>Git, REST APIs(Flask) </p>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Work Experience</h3>
+                    <div class="resume-item">
+                        <h4>Junior Software Developer</h4>
+                        <p>Paveway Automation Pvt. Ltd. | 2023 - 2024</p>
+                        <p>Developed backend modules using C#.NET and                         
+                            MySQL for automation-based client projects. 
+                            Improved system stability and collaborated closely with the automation team.</p>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Projects</h3>
+                    <div class="resume-item">
+                        <h4>Realeye</h4>
+                        <p>
+                            AI-powered emotional wellness and interview-preparation app. 
+                            I worked on UI design, multi-language support, 
+                            data analytics module, and an AI chatbot using Flutter and Firebase. 
+                            The app helps users track emotions,  practice interviews,
+                            and learn technical subjects with real-time answers.
+                            <br><strong>Tools Used:</strong> Flutter, Dart, Firebase (Auth, Firestore ), Cloudinary, AstraDb, 
+                            Gemini, TensorFlow Lite, Python, Flask( REST APIs), Render
+                        </p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Eventify</h4>
+                        <p>
+                        Event management application that allows users to create, manage, and track events easily. 
+                        I handled UI, event creation workflow, 
+                        user authentication, and database 
+                        integration while focusing on a clean and smooth experience.
+                        <br><strong>Tools Used:</strong> Flutter, Dart, Firebase Firestore, Firebase Auth
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>Master of Computer Applications</h4>
+                        <p>Savitribai Phule Pune  University | 2024 - 2026</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Bachelor of Computer Applications</h4>
+                        <p>Swami Ramanand Teerth Marathwada University  | 2020 - 2023</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>HSC</h4>
+                        <p> MSBSHSE | 2019 - 2020</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resume-action-buttons">
+                <button class="btn download-resume-btn" id="downloadResumeBtn">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+                <button class="btn btn-outline close-resume-btn" id="closeResumePreviewBtn">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Software <br>Developer & <span class="gradient-text">AI/ML Enthusiast</span></h1>
+                <p>
+                    Turning ideas into functional, real-world technology,
+                    Building clean, modern, and scalable digital experiences,
+                    Solving complex problems with simple, elegant solutions.
+                </p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                    <button class="btn btn-outline" id="downloadCVBtn">
+                        <i class="fas fa-download"></i> Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="window-dot dot-red"></div>
+                    <div class="window-dot dot-yellow"></div>
+                    <div class="window-dot dot-green"></div>
+                    <div class="window-title">portfolio.js</div>
+                </div>
+                <div class="code-content">
+                    <div class="code-line">
+                        <span class="line-number">1</span>
+                        <span class="code-keyword">const </span> developer = { 
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">2</span>
+                        &nbsp;&nbsp;name: <span class="code-string">"Raviraj Aade"</span>,
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">3</span>
+                        &nbsp;&nbsp;role: <span class="code-string">"Software Developer"</span>,
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">4</span>
+                        &nbsp;&nbsp;skills: [<span class="code-string">"Python"</span>, <span class="code-string">"Dart"</span>, <span class="code-string">"C#"</span>],
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">5</span>
+                        &nbsp;&nbsp;passion: <span class="code-string">"Complexity meets innovation"</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">6</span>
+                        };
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">7</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">8</span>
+                        <span class="code-comment">// Let's build something amazing together</span>
+                    </div>
+                    <div class="code-line">
+                        <span class="line-number">9</span>
+                        <span class="code-function">connect</span>(developer);
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-element element-1"></div>
+            <div class="floating-element element-2"></div>
+            <div class="floating-element element-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <!-- Image on LEFT side -->
+                <div class="about-image">
+                    <img src="2.jpg" alt="Raviraj Aade" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h2>Mr. Raviraj Aade</h2>
+                    <p>A software developer who enjoys turning complex ideas into practical, 
+                    working technology. With experience across Flutter, 
+                    C#.NET, AI/ML, and backend development, 
+                    the goal is always the same—build clean, 
+                    scalable, and meaningful digital solutions.</p>
+
+                    <p> From crafting mobile apps like Realeye to 
+                    working on automation-based systems at Paveway Automation,
+                    the journey has been shaped by constant learning, experimentation, 
+                    and real-world problem-solving.</p>
+                    
+                    <p>Curious by nature and committed to growth, 
+                    always exploring new tools, 
+                    refining existing skills, 
+                    and pushing projects toward better performance,
+                    usability, and impact. Outside of development, 
+                    time goes into researching AI, improving system designs, 
+                    and building ideas that could scale in the future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience & Education</h2>
+            </div>
+            
+            <div class="experience-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="experience">Experience</button>
+                    <button class="tab-btn" data-tab="education">Education</button>
+                </div>
+                
+                <div class="tab-content active" id="experience-tab">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="far fa-calendar"></i> 2023 - 2024
+                                </div>
+                                <h3>Software Developer</h3>
+                                <h4>Paveway Automation Pvt. Ltd.</h4>
+                                <p>
+                                    Designed and developed desktop applications 
+                                    and backend modules using C#.NET 
+                                    and MySQL for automation-driven client projects. 
+                                    Enhanced system stability, 
+                                    optimized workflows, 
+                                    and worked closely with the automation team to deliver efficient, 
+                                    real-world software solutions.
+                                </p>
+                                
+                                <!-- Enhanced Tech Stack with Logos -->
+                                <div class="tech-stack-with-logos">
+                                    <div class="tech-logo-item">
+                                        <img src="Logo\c-sharp.png" alt="C#" />
+                                        <span>C#</span>
+                                    </div>
+                                    <div class="tech-logo-item">
+                                        <img src="Logo\NET.png" alt=".NET" />
+                                        <span>.NET</span>
+                                    </div>
+                                    <div class="tech-logo-item">
+                                        <img src="Logo\MySQL.png" alt="MySQL" />
+                                        <span>MySQL</span>
+                                    </div>
+                                    <div class="tech-logo-item">
+                                        <img src="Logo\plc.png" alt="MySQL" />
+                                        <!-- <i class="fas fa-industry"></i> -->
+                                        <span>PLC</span>
+                                    </div>
+                                    <div class="tech-logo-item">
+                                        <img src="Logo\agile.png" alt="MySQL" />
+                                        <!-- <i class="fas fa-sync-alt"></i> -->
+                                        <span>Agile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="education-tab">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="far fa-calendar"></i>2026
+                                </div>
+                                <h3>Master of Computer Applications</h3>
+                                <h4>Savitribai Phule Pune University</h4>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="far fa-calendar"></i> 2023
+                                </div>
+                                <h3>Bachelor of Computer Applications</h3>
+                                <h4> Swami Ramanand Teerth Marathwada University  </h4>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">
+                                    <i class="far fa-calendar"></i> 2020
+                                </div>
+                                <h3>HSC</h3>
+                                <h4>MSBSHSE</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Realeye</h3>
+                        <p class="project-description">
+                            An AI-powered emotional wellness and interview-preparation app featuring emotion detection, 
+                            AI chat support, study modules, and multilingual support. Built with clean UI, real-time 
+                            analytics, and integrated machine learning models.
+                        </p>
+
+                        <!-- Enhanced Tech Stack with Logos -->
+                        <div class="tech-stack-with-logos">
+                            <!-- Flutter -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Flutter.png" alt="Flutter" />
+                                <span>Flutter</span>
+                            </div>
+
+                            <!-- Flask -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Flask.png" alt="Flask" />
+                                <span>Flask</span>
+                            </div>
+
+                            <!-- Python -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\python.png" alt="Python" />
+                                <span>Python</span>
+                            </div>
+
+                            <!-- Firebase -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Firebase.png" alt="Firebase" />
+                                <span>Firebase</span>
+                            </div>
+
+                            <!-- AstraDB -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\astradb.png" alt="AstraDB" style="width:30px;height:30px;" />
+                                <span>AstraDB</span>
+                            </div>
+
+                            <!-- Cloudinary -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Cloudinary.png" alt="Cloudinary" style="width:30px;height:30px;" />
+                                <span>Cloudinary</span>
+                            </div>
+
+                            <!-- Dart -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Dart.png" alt="Dart" />
+                                <span>Dart</span>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Eventify</h3>
+                        <p class="project-description">
+                            A modern event management application for creating, tracking, and organizing events with 
+                            automated reminders, user authentication, and smooth UI interactions. Designed for 
+                            seamless event handling and real-time updates.
+                        </p>
+
+                        <!-- Enhanced Tech Stack with Logos -->
+                        <!-- <div class="tech-stack-with-logos"> -->
+                            <!-- Flutter -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Flutter.png" alt="Flutter" />
+                                <span>Flutter</span>
+                            </div>
+
+                            <!-- Firebase -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Firebase.png" alt="Firebase" />
+                                <span>Firebase</span>
+                            </div>
+
+                            <!-- Dart -->
+                            <div class="tech-logo-item">
+                                <img src="Logo\Dart.png" alt="Dart" />
+                                <span>Dart</span>
+                            </div>
+                        <!-- </div> -->
+
+                        <div class="project-links">
+                            <a href="https://github.com/AadeRaviraj/eventify_" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-palette"></i> Frontend</h3>
+                    <div class="skill-items">
+                        <div class="tech-logo-item"><img src="Logo\Flutter.png" alt="Flutter" /> <span>Flutter</span></div>
+                        <!-- <div class="tech-logo-item"><img src="Logo\css-3.png" alt="Css3" /> <span>CSS3</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\html-5.png" alt="Html5" /><span>Html</span> </div> -->
+                        <!-- <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> React</div>
+                        <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> Vue.js</div>
+                        <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> SASS</div>
+                        <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> Bootstrap</div>
+                        <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> Figma</div> -->
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Backend</h3>
+                    <div class="skill-items">
+                        <!-- <div class="skill-item"><i class="fab fa-node-js"></i> Node.js</div>
+                        <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-item"><i class="fas fa-database"></i> MongoDB</div>
+                        <div class="skill-item"><i class="fas fa-database"></i> MySQL</div>
+                        <div class="skill-item"><i class="fab fa-aws"></i> AWS</div>
+                        <div class="skill-item"><i class="fas fa-fire"></i> Firebase</div>
+                        <div class="skill-item"><i class="fas fa-bolt"></i> Express</div>
+                        <div class="skill-item"><i class="fas fa-cloud"></i> REST APIs</div> -->
+                        <div class="tech-logo-item"><img src="Logo\python.png" alt="Python" /> <span>Python</span></div>
+                        <div class="tech-logo-item"><img src="Logo\c-sharp.png" alt="C#" /><span>C#</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\Dart.png" alt="Dart" /> <span>Dart</span></div>
+                        <div class="tech-logo-item"><img src="Logo\java.png" alt="Java" /> <span>Java</span></div>          
+                        <div class="tech-logo-item"><img src="Logo\NET.png" alt=".net" /> <span>.net</span></div>                       
+                        <div class="tech-logo-item"><img src="Logo\Flask.png" alt="Flask" /> <span>Flask</span></div>
+                        <div class="tech-logo-item"><img src="Logo\api.png" alt="RestApi" /> <span>RESTApi</span></div>
+                        <div class="tech-logo-item"><img src="Logo\Firebase.png" alt="Firebase" /><span>Firebase</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\MongoDB.png" alt="MongoDB" /><span>MongoDB</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\MySQL.png" alt="MySQL" /> <span>MySQL</span></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+                    <div class="skill-items">
+                        <!-- <div class="skill-item"><i class="fab fa-git"></i> Git</div>
+                        <div class="skill-item"><i class="fab fa-github"></i> GitHub</div>
+                        <div class="skill-item"><i class="fas fa-terminal"></i> CLI</div>
+                        <div class="skill-item"><i class="fab fa-docker"></i> Docker</div>
+                        <div class="skill-item"><i class="fab fa-npm"></i> NPM</div>
+                        <div class="skill-item"><i class="fas fa-code-branch"></i> Agile</div>
+                        <div class="skill-item"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                        <div class="skill-item"><i class="fas fa-search"></i> SEO</div> -->
+                        <div class="tech-logo-item"><img src="Logo\Git.png" alt="git" /><span>Git</span> </div>                       
+                        <div class="tech-logo-item"><img src="Logo\github.png" alt="Github" /> <span>GitHub</span></div>
+                        <div class="tech-logo-item"><img src="Logo\agile.png" alt="Agile" /><span>Agile</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\Jupyter.png" alt="Jupyter" /><span>Jupyter</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\VS_Code.png" alt="Vs-Code" /> <span>Vs-Code</span></div>
+                        <div class="tech-logo-item"><img src="Logo\Android_stuudio.png" alt="Android Studio" /><span>Android Studio</span> </div>
+                        <div class="tech-logo-item"><img src="Logo\Visual_Studio.png" alt="Visual Studio" /> <span>Visual Studio</span></div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Katraj, Pune, Maharashtra 411046</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>ravirajaade299@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 9075135648</p>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/AadeRaviraj" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/raviraj-aade/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a href="https://www.instagram.com/raviraj_s_aade?utm_source=qr" class="social-icon"><i class="fab fa-instagram"></i></a> -->
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a> -->
+                        
+                        <!-- <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-code"></i>
+                        Raviraj Aade
+                    </a>
+                    <p>Creating digital experiences that make a difference. Passionate about clean code, user experience, and innovative solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>What I Do</h3>
+                    <ul>
+                        <li><a href="#">Full-Stack Development</a></li>
+                        <li><a href="#">Backend Architecture</a></li>
+                        <li><a href="#">API Development</a></li> 
+                        <li><a href="#">Backend Development (APIs & Databases)</a></li>
+                        <li><a href="#">Flask REST API Integration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;2025 Made with ❤️ by Raviraj Aade</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
