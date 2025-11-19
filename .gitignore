@@ -1,0 +1,14 @@
+# Ignore logo folder
+Logo/
+
+# Ignore resume folder
+resume/
+
+# Ignore specific image
+1.jpg
+2.jpg
+r.png
+rr1_1.png
+rr1.png
+rr2.png
+rrr.png
