@@ -1,213 +1,325 @@
-// Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+/* ==============================================
+   RAVIRAJ AADE PORTFOLIO — script.js
+   Sky Blue Theme | Dark/Light Mode | Animations
+============================================== */
 
-// Resume Download Functionality
-const downloadCVBtn = document.getElementById('downloadCVBtn');
-const resumeModal = document.getElementById('resumeModal');
-const closeResumeModal = document.getElementById('closeResumeModal');
-const closeResumePreviewBtn = document.getElementById('closeResumePreviewBtn');
-const downloadResumeBtn = document.getElementById('downloadResumeBtn');
-
-// Open resume modal
-if (downloadCVBtn) {
-    downloadCVBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        resumeModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    });
-}
-
-// Close resume modal
-function closeResumeModalFunc() {
-    resumeModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-if (closeResumeModal) {
-    closeResumeModal.addEventListener('click', closeResumeModalFunc);
-}
-
-if (closeResumePreviewBtn) {
-    closeResumePreviewBtn.addEventListener('click', closeResumeModalFunc);
-}
-
-// Close modal when clicking outside
-window.addEventListener('click', (event) => {
-    if (event.target === resumeModal) {
-        closeResumeModalFunc();
-    }
+// ── PAGE LOADER ──────────────────────────────
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  setTimeout(() => loader.classList.add('hidden'), 800);
 });
 
-// Download resume functionality
-if (downloadResumeBtn) {
-    downloadResumeBtn.addEventListener('click', () => {
-        // Create a temporary link for download
-        const link = document.createElement('a');
-        link.href = 'resume/Raviraj_Aade.pdf'; // Use forward slashes
-        link.download = 'Raviraj-Aade-Resume.pdf';
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        closeResumeModalFunc();
-    });
-}
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && resumeModal.style.display === 'flex') {
-        closeResumeModalFunc();
-    }
-});
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.innerHTML = navLinks.classList.contains('active') 
-        ? '<i class="fas fa-times"></i>' 
-        : '<i class="fas fa-bars"></i>';
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-    });
-});
-
-// Tab functionality
-const tabBtns = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
-
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons and contents
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabContents.forEach(c => c.classList.remove('active'));
-        
-        // Add active class to clicked button
-        btn.classList.add('active');
-        
-        // Show corresponding content
-        const tabId = btn.getAttribute('data-tab') + '-tab';
-        document.getElementById(tabId).classList.add('active');
-    });
-});
-
-// Form submission
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    fetch('https://formspree.io/f/xzzoddkd', {
-        method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Thank you for your message! I will get back to you soon.');
-            form.reset();
-        } else {
-            alert('Oops! There was a problem submitting your form. Please try again.');
-        }
-    })
-    .catch(error => {
-        alert('Oops! There was a problem submitting your form. Please try again.');
-    });
-});
-
-// Sticky header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 100) {
-        header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.boxShadow = '0 1px 10px rgba(0, 0, 0, 0.05)';
-    }
-});
-
-// Theme toggle functionality
+// ── THEME TOGGLE ─────────────────────────────
+const html = document.documentElement;
 const themeToggle = document.getElementById('themeToggle');
-const currentTheme = localStorage.getItem('theme') || 'light';
+const themeIcon = document.getElementById('themeIcon');
 
-// Set initial theme
-document.documentElement.setAttribute('data-theme', currentTheme);
-updateThemeIcon(currentTheme);
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
 
 themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
+  const current = html.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateThemeIcon(next);
 });
 
 function updateThemeIcon(theme) {
-    const icon = themeToggle.querySelector('i');
-    if (theme === 'dark') {
-        icon.className = 'fas fa-sun';
-    } else {
-        icon.className = 'fas fa-moon';
-    }
+  themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
-// Scroll animation for sections
-const sections = document.querySelectorAll('section');
+// ── CUSTOM CURSOR ────────────────────────────
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.1 });
-
-sections.forEach(section => {
-    observer.observe(section);
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px';
+  dot.style.top  = my + 'px';
 });
 
-// Particle animation
-function createParticles() {
-    const particlesContainer = document.getElementById('particles');
-    const particleCount = 30;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        
-        // Random properties
-        const size = Math.random() * 10 + 5;
-        const posX = Math.random() * 100;
-        const delay = Math.random() * 15;
-        const duration = Math.random() * 10 + 15;
-        
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.left = `${posX}%`;
-        particle.style.animationDelay = `${delay}s`;
-        particle.style.animationDuration = `${duration}s`;
-        
-        particlesContainer.appendChild(particle);
-    }
+(function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+
+document.querySelectorAll('a, button, .tech-logo-item, .tl-card, .project-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    dot.style.transform  = 'translate(-50%,-50%) scale(2.5)';
+    ring.style.transform = 'translate(-50%,-50%) scale(1.8)';
+    ring.style.opacity   = '0.8';
+  });
+  el.addEventListener('mouseleave', () => {
+    dot.style.transform  = 'translate(-50%,-50%) scale(1)';
+    ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    ring.style.opacity   = '0.5';
+  });
+});
+
+// ── HEADER SCROLL ────────────────────────────
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+  updateActiveNavLink();
+});
+
+// ── HAMBURGER / MOBILE MENU ──────────────────
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+// ── ACTIVE NAV LINK ──────────────────────────
+function updateActiveNavLink() {
+  const sections = document.querySelectorAll('section[id]');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 140) current = s.id;
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
 }
 
-// Initialize particles
-createParticles();
+// ── HERO CANVAS (floating particles) ─────────
+const canvas = document.getElementById('heroCanvas');
+const ctx    = canvas.getContext('2d');
+let particles = [];
 
-// Loading animation
-window.addEventListener('load', () => {
-    const loading = document.querySelector('.loading');
-    loading.classList.remove('hidden');
-    
-    setTimeout(() => {
-        loading.classList.add('hidden');
-    }, 1000);
+function resizeCanvas() {
+  canvas.width  = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x  = Math.random() * canvas.width;
+    this.y  = Math.random() * canvas.height;
+    this.r  = Math.random() * 2.5 + 0.5;
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    this.alpha = Math.random() * 0.4 + 0.1;
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+  draw() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = isDark ? `rgba(56,189,248,${this.alpha})` : `rgba(14,165,233,${this.alpha})`;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+function animCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+
+  // Draw connecting lines
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 100) {
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        const alpha = (1 - dist / 100) * 0.12;
+        ctx.strokeStyle = isDark ? `rgba(56,189,248,${alpha})` : `rgba(14,165,233,${alpha})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animCanvas);
+}
+animCanvas();
+
+// ── SCROLL REVEAL ────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  revealObserver.observe(el);
+});
+
+// Hero fade-up animations
+const heroFadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  el.style.transitionDelay = i * 0.12 + 's';
+  heroFadeObserver.observe(el);
+});
+
+// ── TAB FUNCTIONALITY ────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    const target = document.getElementById(btn.dataset.tab);
+    if (target) {
+      target.classList.add('active');
+      // Re-observe items inside for stagger
+      target.querySelectorAll('.reveal-up').forEach((el, i) => {
+        el.style.transitionDelay = i * 0.1 + 's';
+        el.classList.remove('visible');
+        setTimeout(() => el.classList.add('visible'), 50);
+      });
+    }
+  });
+});
+
+// ── RESUME MODAL ─────────────────────────────
+const modal       = document.getElementById('resumeModal');
+const overlay     = document.getElementById('modalOverlay');
+const closeBtn    = document.getElementById('closeResumeModal');
+const closePreview = document.getElementById('closeResumePreviewBtn');
+const downloadBtn = document.getElementById('downloadResumeBtn');
+
+function openModal() {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+['downloadCVBtn', 'aboutDownloadCV'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', openModal);
+});
+
+if (closeBtn)     closeBtn.addEventListener('click', closeModal);
+if (closePreview) closePreview.addEventListener('click', closeModal);
+if (overlay)      overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});
+
+if (downloadBtn) {
+  downloadBtn.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href     = 'resume/Raviraj_Aade_.pdf';
+    link.download = 'Raviraj-Aade-Resume.pdf';
+    link.target   = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    closeModal();
+  });
+}
+
+// ── CONTACT FORM ─────────────────────────────
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('[type=submit]');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xzzoddkd', {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(res => {
+      if (res.ok) {
+        btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        btn.style.background = 'linear-gradient(135deg,#22c55e,#16a34a)';
+        this.reset();
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.disabled = false;
+          btn.style.background = '';
+        }, 3500);
+      } else {
+        throw new Error();
+      }
+    })
+    .catch(() => {
+      btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Failed — Try again';
+      btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 3500);
+    });
+  });
+}
+
+// ── PROJECT FILTER TABS ─────────────────────
+const pfBtns = document.querySelectorAll('.pf-btn');
+const projCards = document.querySelectorAll('.project-card');
+
+pfBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    pfBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    projCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('hidden', !match);
+      if (match) {
+        card.style.animation = 'none';
+        requestAnimationFrame(() => {
+          card.style.animation = '';
+          card.classList.add('visible');
+        });
+      }
+    });
+  });
+});
+
+// ── SMOOTH SECTION SCROLL FIX ────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+    }
+  });
 });
