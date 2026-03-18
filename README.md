@@ -1,162 +1,19 @@
-# Raviraj Aade — Developer Portfolio
+# Raviraj Aade — Portfolio
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-181717?style=flat&logo=github)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Live-brightgreen)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-181717?style=flat&logo=github)
 
-Personal developer portfolio website for **Raviraj Aade** — Software Developer & AI/ML Engineer. Built with pure HTML, CSS, and JavaScript. Features a sky-blue theme with full dark/light mode support and smooth animations throughout.
+My personal developer portfolio website.
 
-**Live Site:** [https://AadeRaviraj.github.io](https://AadeRaviraj.github.io)
-
-**GitHub Profile:** [https://github.com/AadeRaviraj](https://github.com/AadeRaviraj)
-
----
-
-## About
-
-This portfolio is designed to give recruiters and collaborators a clear picture of my technical skills, project work, professional background, and how to get in touch. It showcases 10 projects across App Development, Machine Learning, and Python Automation — all available on GitHub.
+**Live:** [https://AadeRaviraj.github.io](https://AadeRaviraj.github.io)
 
 ---
 
-## Project Structure
+## About Me
 
-```
-RAviraj_Aade_portfolio/
-│
-├── index.html          # Main HTML — all sections and resume modal
-├── style.css           # Full CSS — sky-blue theme, dark/light mode, animations
-├── script.js           # JavaScript — cursor, canvas, scroll reveal, filters, modal
-│
-├── Logo/               # Technology logo images used in skill and project cards
-│   ├── python.png
-│   ├── Flutter.png
-│   ├── Flask.png
-│   ├── Firebase.png
-│   ├── c-sharp.png
-│   ├── NET.png
-│   ├── MySQL.png
-│   ├── MongoDB.png
-│   ├── Dart.png
-│   ├── Git.png
-│   ├── github.png
-│   ├── Jupyter.png
-│   ├── VS_Code.png
-│   ├── Visual_Studio.png
-│   ├── Android_stuudio.png
-│   ├── agile.png
-│   ├── api.png
-│   ├── astradb.png
-│   ├── Cloudinary.png
-│   ├── java.png
-│   └── plc.png
-│
-├── resume/
-│   └── Raviraj_Aade_.pdf   # Resume PDF (downloaded when visitor clicks Download CV)
-│
-├── 2.jpg               # Profile photo used in About section
-└── README.md
-```
+Software Developer & AI/ML Engineer based in Pune, Maharashtra.
+Open to roles in Backend Development, AI/ML Engineering, Flask Development, and Python Automation.
 
----
-
-## Sections
-
-| Section | Description |
-|---------|-------------|
-| Hero | Name, roles, availability badge, GitHub/LinkedIn socials, Download CV, animated canvas background |
-| About | Profile photo, quick stats (1.5+ years, 8+ projects, 5+ ML), role tags, background text |
-| Experience & Education | Tab-switched timeline — work history at Paveway Automation + education |
-| Projects | All 10 GitHub projects with filter tabs (All / App Dev / ML / Automation) |
-| Skills | 4 skill categories — Mobile, Backend, Databases, Tools — with logo grid cards |
-| Contact | Contact info cards + working contact form via Formspree |
-| Resume Modal | Full inline resume preview with all projects, GitHub links, and PDF download |
-| Footer | Quick links, what I do, social links, back to top |
-
----
-
-## All Projects Featured
-
-**App Development**
-- Realeye — AI-powered emotional wellness and interview-preparation app (Flutter, Flask, Firebase, TensorFlow Lite, Gemini)
-- Eventify — Event management app (Flutter, Firebase Firestore)
-
-**Machine Learning**
-- [iris-flower-classification](https://github.com/AadeRaviraj/iris-flower-classification) — Decision Tree classifier
-- [knn-wine-classification](https://github.com/AadeRaviraj/knn-wine-classification) — KNN with hyperparameter tuning
-- [titanic-survival-prediction](https://github.com/AadeRaviraj/titanic-survival-prediction) — Logistic Regression with model persistence
-- [advertising-sales-prediction](https://github.com/AadeRaviraj/advertising-sales-prediction) — Multiple Linear Regression
-- [mall-customer-segmentation-kmeans](https://github.com/AadeRaviraj/mall-customer-segmentation-kmeans) — K-Means Clustering
-
-**Python Automation**
-- [automated-datashield](https://github.com/AadeRaviraj/automated-datashield) — Incremental backup with email notification
-- [automated-disk-sanitizer](https://github.com/AadeRaviraj/automated-disk-sanitizer) — Duplicate file detection and deletion
-- [automated-platform-surveillance-system](https://github.com/AadeRaviraj/automated-platform-surveillance-system) — Real-time system monitoring with email reports
-
----
-
-## Features
-
-| Feature | Details |
-|---------|---------|
-| Sky Blue Theme | Cohesive sky-blue color system (`#0ea5e9`) across light and dark mode |
-| Dark / Light Mode | Toggle button in navbar — preference saved to `localStorage` |
-| Custom Cursor | Blue dot + ring follower with hover scale effect |
-| Canvas Background | Animated floating particles with connecting lines in hero section |
-| Scroll Reveal | Elements animate in on scroll using `IntersectionObserver` |
-| Project Filter Tabs | Filter all 10 projects by category — All / App Dev / ML / Automation |
-| Resume Modal | Full inline resume with all projects and direct GitHub links |
-| PDF Download | Download CV button triggers `resume/Raviraj_Aade_.pdf` |
-| Contact Form | Functional form submission via Formspree with success/error states |
-| Active Nav Links | Navbar highlights the current section while scrolling |
-| Page Loader | Spinner with initials shown on page load |
-| Fully Responsive | Works on mobile, tablet, and desktop |
-
----
-
-## Tech Stack
-
-- **HTML5** — semantic structure, accessibility
-- **CSS3** — CSS variables, Grid, Flexbox, keyframe animations, dark/light mode via `data-theme`
-- **Vanilla JavaScript** — IntersectionObserver, requestAnimationFrame, Canvas API, localStorage
-- **Google Fonts** — Outfit (headings) + Plus Jakarta Sans (body)
-- **Font Awesome 6** — icons throughout
-- **Formspree** — contact form backend
-
----
-
-## How to Deploy on GitHub Pages
-
-1. Clone or fork this repository
-2. Add your `resume/Raviraj_Aade_.pdf` file
-3. Add your profile photo as `RavirajAade.png`
-4. Ensure all logo images are present in the `Logo/` folder
-5. Push to the `main` branch of your GitHub Pages repository
-6. Go to repository **Settings → Pages → Source → main → / (root)**
-7. Your site will be live at `https://AadeRaviraj.github.io`
-
----
-
-## Customisation
-
-**To change the theme color**, update `--sky-500` and `--accent` in `:root` inside `style.css`.
-
-**To update the contact form endpoint**, replace the Formspree URL in `script.js`:
-```javascript
-fetch('https://formspree.io/f/xzzoddkd', { ... })
-```
-
-**To add a new project**, copy any `.project-card` block in `index.html` and update the `data-category` attribute to `app`, `ml`, or `automation`. The filter tabs will automatically include it.
-
----
-
-## Author
-
-**Raviraj Aade**
-
-- GitHub: [https://github.com/AadeRaviraj](https://github.com/AadeRaviraj)
-- LinkedIn: [https://www.linkedin.com/in/raviraj-aade/](https://www.linkedin.com/in/raviraj-aade/)
-- Email: ravirajaade299@gmail.com
-- Location: Katraj, Pune, Maharashtra 411046
+- GitHub: [AadeRaviraj](https://github.com/AadeRaviraj)
+- LinkedIn: [raviraj-aade](https://www.linkedin.com/in/raviraj-aade/)
+- Email: raviraj.s.aade@gmail.com
